@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 
 class CharacterAdapter(private val context: Context,
-                       private val list: MutableList<Character>) :
+                       ) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     class ImageViewHolder(item: View): RecyclerView.ViewHolder(item) {
         fun bind(item: String) {
@@ -29,6 +29,12 @@ class CharacterAdapter(private val context: Context,
             val textView = itemView.findViewById<TextView>(R.id.speciesTextView)
             textView.text = item
         }
+    }
+
+
+    private var list: MutableList<Character> = ArrayList()
+    fun submitList(myList: MutableList<Character>){
+        list = myList
     }
 
 
